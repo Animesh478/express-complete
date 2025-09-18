@@ -1,5 +1,5 @@
 const formEl = document.querySelector("form");
-
+/*
 async function submitForm(e) {
   e.preventDefault();
 
@@ -9,7 +9,7 @@ async function submitForm(e) {
   try {
     await fetch("http://localhost:3008/user", {
       method: "POST",
-      headers: {
+      headers: {    
         "Content-type": "application/json",
       },
       body: JSON.stringify({
@@ -23,3 +23,4 @@ async function submitForm(e) {
 }
 
 formEl.addEventListener("submit", submitForm);
+*/
