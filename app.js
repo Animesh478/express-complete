@@ -12,6 +12,20 @@ app.use(express.static(staticPath));
 
 // Both the ways above use absolute path, but the second one is platform independent
 
+app.use(express.urlencoded());
+app.use(express.json());
+
+app.get("/user", (req, res) => {
+  const info = req.query;
+  console.log(info);
+  res.redirect("/");
+});
+app.post("/user", (req, res) => {
+  const info = req.body;
+  console.log(info);
+  res.redirect("/");
+});
+
 // const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
