@@ -1,21 +1,23 @@
 const formEl = document.querySelector("form");
-/*
+
 async function submitForm(e) {
   e.preventDefault();
 
-  const name = document.querySelector("#name").value;
-  const message = document.querySelector("#message").value;
+  const formData = new FormData(formEl);
+  formData.append("email", "test@gmail.com");
+
+  const data = {};
+  for (let [key, value] of formData.entries()) {
+    data[key] = value;
+  }
 
   try {
     await fetch("http://localhost:3008/user", {
       method: "POST",
-      headers: {    
+      headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({
-        name: name,
-        message: message,
-      }),
+      body: JSON.stringify(data),
     });
   } catch (error) {
     console.log(JSON.stringify({ Error: error }));
@@ -23,4 +25,3 @@ async function submitForm(e) {
 }
 
 formEl.addEventListener("submit", submitForm);
-*/
