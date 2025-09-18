@@ -26,6 +26,10 @@ app.post("/user", (req, res) => {
   res.redirect("/");
 });
 
+app.use("/", (req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "view", "404.html"));
+});
+
 // const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
